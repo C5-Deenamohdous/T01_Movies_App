@@ -1,0 +1,9 @@
+.navBarButton{
+   display: flex;
+   gap: 20px;
+}
+
+.links{
+    text-decoration: none;
+    color: var(--bs-navbar-brand-color);
+}
