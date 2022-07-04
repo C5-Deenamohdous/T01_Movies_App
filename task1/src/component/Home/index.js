@@ -27,11 +27,11 @@ useEffect(()=>{
       {movies && movies.map((el,i)=>{
       return(
         <div className="allMovies" onClick={() => {(navigate(`/oneMovie/${el.id}`))}}>
-<p> {el.title}</p>
-<p>{el.release_date}</p>
-<p>{el.popularity}</p>
-<p>{el.original_language}</p>
-<p>{el.overview}</p>
+<p> Title: {el.title}</p>
+<p>Release_date : {el.release_date}</p>
+<p>Popularity : {el.popularity}</p>
+<p>Original_language : {el.original_language}</p>
+<p>Overview : {el.overview}</p>
 </div>
       )
     })}
