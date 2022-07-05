@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
-import "./style.css";
+// import "./style.css";
+import AddToFav from "../AddToFav";
 
 function OneMovie() {
   const navigate = useNavigate();
@@ -25,50 +26,58 @@ function OneMovie() {
     getOneMovie();
   }, [id]);
   return (
-    <div>
-      <>
-        <img src={`https://image.tmdb.org/t/p/w500/${oneMovie.poster_path}`} />
-        <p>title : {oneMovie.title}</p>
-        <p>Release_date : {oneMovie.release_date}</p>
-        <p>Popularity :{oneMovie.popularity}</p>
-        <p>Original_language :{oneMovie.original_language}</p>
-        <p>Overview : {oneMovie.overview}</p>
-        <p>Vote_average : {oneMovie.vote_average}</p>
-        <p>Run-Time: {oneMovie.runtime}</p>
-
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+    <>
+      <div class="movie_card" id="bright">
+        <div class="info_section">
+          <div class="movie_header">
+            <img
+              class="locandina"
+              src={`https://image.tmdb.org/t/p/w500/${oneMovie.poster_path}`}
+            />
+            <h3>{oneMovie.title}</h3>
+            <h5>{oneMovie.release_date}</h5>
+            <span class="minutes"> {oneMovie.runtime} mins</span>
+            <p class="type"> Revenue: {oneMovie.revenue} $</p>
+          </div>
+          <div class="movie_desc">
+            <p class="text">{oneMovie.overview}</p>
+          </div>
+          <div class="movie_social">
+            <ul>
+              <li>
+                <i class="material-icons">
+                  {/* <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Add To Favorites
-</button>
-
-
-<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="staticBackdropLabel"> Add Movie To Favorites</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-      Do you want to add {oneMovie.title} to favorites list?
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">YES</button>
-      </div>
-    </div>
-  </div>
-</div>
-     
-     
-        <button
-          onClick={() => {
-            navigate(`/addTOFav`);
+</button> */}
+                </i>
+              </li>
+              <AddToFav el={oneMovie} />
+              <li>
+                <i class="material-icons">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    onClick={() => {
+                      navigate(`/addTOFav`);
+                    }}
+                  >
+                    Go To Favorite
+                  </button>
+                </i>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div
+          class="blur_back bright_back"
+          style={{
+            backgroundImage: `url(https://image.tmdb.org/t/p/w500/${oneMovie.backdrop_path}`,
           }}
         >
-          Go To Favorite
-        </button>
-      </>
-    </div>
+          {" "}
+        </div>
+      </div>
+    </>
   );
 }
 
