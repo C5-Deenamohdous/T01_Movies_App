@@ -7,7 +7,7 @@ function Home() {
   const navigate = useNavigate();
   const [page, setPage] = useState(1)
   const [movies, setMovies] = useState("");
-  const getPopMovie = () => {
+  const getPopMovie = (page) => {
     axios
       .get(
         `https://api.themoviedb.org/3/movie/popular?api_key=1bfa430aada4409bfa6a3c5528128e8a&language=en-US&page=${page}`
@@ -63,10 +63,10 @@ function Home() {
 
 
 </div>
-<div className="loadBtn">
-  <button onClick={()=>{
-setPage(page+1)
-getPopMovie()
+<div className="btnLoad">
+<button type="button" class="btn btn-outline-primary" onClick={()=>{
+setPage(page+1);
+getPopMovie(page+1);
 
 }}>Load More</button>
 </div>

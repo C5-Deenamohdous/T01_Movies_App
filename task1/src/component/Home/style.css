@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    margin-top: 4%;
+    margin-top: 1%;
     gap: 5%;
     justify-content: center;
 }
@@ -23,14 +23,15 @@
   display: flex;
   font-family: Abel, sans-serif;
     font-size: 42px;
-    margin-left: 100px;
+    margin-left: 105px;
     margin-top: 50px;
     justify-content: start;
     color: #000;;
 }
 
-.loadBtn{
+.btnLoad{
   display: flex;
+margin-left: 114px;
 
 width: 80%;
 justify-content: center;

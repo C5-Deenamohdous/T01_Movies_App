@@ -5,20 +5,9 @@ import "./style.css";
 import { RiDeleteBin2Line } from "react-icons/ri";
 function FavPage() {
 
-//   const [first, setFirst] = useState([]);
-//   const [arrayOfId, setArrayOfId] = useState([]);
-
 const { length, setLength, setFirst, setArrayOfId, first, arrayOfId } =
 useContext(props);
-//   console.log(lengthOfArray,"ppppppp[[[[[[");
-//   useEffect(() => {
-//     let storage = JSON.parse(localStorage.getItem("key")) || [];
-//     setFirst(storage);
-//     let moviesId = JSON.parse(localStorage.getItem("arrayId")) || [];
-//     console.log(storage, "in favvvv pageee");
-//     setArrayOfId(moviesId);
 
-//   }, []);
 
   const deleteFromFav = (el) => {
     let deleted = first.filter((element, i) => {
@@ -59,8 +48,7 @@ useContext(props);
                   </button>
                 </div>
               </div>
-              {/* {lengthOfArray.setLength(first.length)} */}
-            
+              
             
             </>
             

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
-// import "./style.css";
+import "./style.css";
 import AddToFav from "../AddToFav";
 
 function OneMovie() {
@@ -27,14 +27,10 @@ function OneMovie() {
   }, [id]);
   return (
     <>
-      <div class="movie_card" id="bright">
-        <div class="info_section">
-          <div class="movie_header">
-            <img
-              class="locandina"
-              src={`https://image.tmdb.org/t/p/w500/${oneMovie.poster_path}`}
-            />
-            <h3>{oneMovie.title}</h3>
+      {/* <div class="movie_card" id="bright">
+       
+           
+          
             <h5>{oneMovie.release_date}</h5>
             <span class="minutes"> {oneMovie.runtime} mins</span>
             <p class="type"> Revenue: {oneMovie.revenue} $</p>
@@ -48,7 +44,7 @@ function OneMovie() {
                 <i class="material-icons">
                   {/* <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
         Add To Favorites
-</button> */}
+</button>
                 </i>
               </li>
               <AddToFav el={oneMovie} />
@@ -76,7 +72,42 @@ function OneMovie() {
         >
           {" "}
         </div>
+      </div>  */}
+
+<div className="mainOneMovie" >
+<div class="movie-container m-5 p-5 mainnnnn  "  style={{
+              backgroundImage: `url("https://image.tmdb.org/t/p/original${oneMovie.backdrop_path}")`,
+              backgroundSize: "cover",
+              
+            }}
+>
+  <div className="Over"></div>
+  <div class="row d-flex align-items-stretch stretchesss">
+    <div class="col-md-5 col-lg-5 imageeMovie">
+      <img src={`https://image.tmdb.org/t/p/w500/${oneMovie.poster_path}`}/>
+    </div>
+    <div class="col-md-7 col-lg-7 d-flex flex-column justify-content-start infoOneMovie insideee">
+      <h1 class="mb-3">{oneMovie.title}</h1>
+      <ul class="movie-tags ">
+        <li class="selected">8.5</li>
+        <li>2019</li>
+        <li>3h 1min</li>
+        <li>Action</li>
+      </ul>
+      {/* <div style="clear:both"> </div> */}
+      <p class="movie-info mt-3">
+        After the devastating events of Avengers: Sonsuzluk Savaşı (2018), the universe is in ruins. With the help of remaining allies, the Avengers assemble once more in order to reverse Thanos' actions and restore balance to the universe.
+      </p>
+      <div class="bd-highlight">
+      <a href="#" class="btn-watch"><i class="fas fa-play mr-2"></i>Watch Trailer</a>
       </div>
+    </div>
+  </div>
+</div>
+</div>
+
+
+
     </>
   );
 }
