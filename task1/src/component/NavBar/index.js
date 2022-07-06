@@ -1,8 +1,12 @@
-import React from "react";
+import React,{useContext} from "react";
 import "./style.css";
 import { Link } from "react-router-dom";
+import { props } from "../../App";
+
 
 function NavBar() {
+
+    const lengthOfArray = useContext(props)
   return (
     <nav className="navbar navbar-dark bg-dark">
       <div className="container-fluid">
@@ -20,7 +24,7 @@ function NavBar() {
               Favorite
             </Link>{" "}
             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-            +99
+            {lengthOfArray.length}
             </span>
           </button>
         </div>

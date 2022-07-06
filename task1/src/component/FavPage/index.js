@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState , useContext} from "react";
 import NavBar from "../NavBar";
-
+import { props } from "../../App";
 import "./style.css";
 
 function FavPage() {
+
   const [first, setFirst] = useState([]);
+  const lengthOfArray = useContext(props)
+  console.log(lengthOfArray,"ppppppp[[[[[[");
   useEffect(() => {
     let storage = JSON.parse(localStorage.getItem("key")) || [];
     setFirst(storage);
@@ -45,7 +48,7 @@ function FavPage() {
                   </button>
                 </div>
               </div>
-             {/* <NavBar  el ={first.length}/> */}
+              {lengthOfArray.setLength(first.length)}
               {console.log(first.length, " {{{{{{{{{")};
             </>
             

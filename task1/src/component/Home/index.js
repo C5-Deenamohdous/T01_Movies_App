@@ -5,11 +5,12 @@ import "./style.css";
 
 function Home() {
   const navigate = useNavigate();
+  const [page, setPage] = useState(1)
   const [movies, setMovies] = useState("");
   const getPopMovie = () => {
     axios
       .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=1bfa430aada4409bfa6a3c5528128e8a&language=en-US&page=1`
+        `https://api.themoviedb.org/3/movie/popular?api_key=1bfa430aada4409bfa6a3c5528128e8a&language=en-US&page=${page}`
       )
       .then((result) => {
         console.log(result);
@@ -19,6 +20,22 @@ function Home() {
         console.log(err);
       });
   };
+
+  const nextPage = () => {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/popular?api_key=1bfa430aada4409bfa6a3c5528128e8a&language=en-US&page=${page}`
+      )
+      .then((result) => {
+        console.log(result);
+        setMovies(result.data.results);
+
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  
   useEffect(() => {
     getPopMovie();
   }, []);
@@ -50,14 +67,25 @@ function Home() {
     
     </div>
 </div> 
+
  </>
   }
    
 
   )
 }  
+
+
+</div>
+<div className="loadBtn">
+  <button onClick={()=>{
+setPage(page+1)
+nextPage()
+
+}}>Load More</button>
 </div>
 </>
+
 )
 
 }

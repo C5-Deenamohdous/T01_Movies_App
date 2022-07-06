@@ -29,6 +29,13 @@
     color: #000;;
 }
 
+.loadBtn{
+  display: flex;
+
+width: 80%;
+justify-content: center;
+/* align-items: center; */
+}
 
 
 

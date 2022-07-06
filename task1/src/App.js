@@ -1,5 +1,5 @@
 import "./App.css";
-import React from "react";
+import React, { createContext , useState} from "react";
 
 import { Route, Routes } from "react-router-dom";
 import Home from "./component/Home";
@@ -9,22 +9,26 @@ import OneMovie from "./component/OneMovie";
 import AddToFav from "./component/AddToFav";
 import FavPage from "./component/FavPage";
 
+export const props = createContext();
 function App() {
+  const [length, setLength] = useState(0);
   return (
     <div className="App">
-     
-    
-      <NavBar />
-      
-      <Routes>
-        
-        <Route path="/" element={<Home />}></Route>
+      <props.Provider
+        value={{
+          length,
+          setLength,
+        }}
+      >
+        <NavBar />
 
-        <Route path="/oneMovie/:id" element={<OneMovie />}></Route>
-        <Route path="/addTOFav" element={<FavPage />}></Route>
+        <Routes>
+          <Route path="/" element={<Home />}></Route>
 
-      </Routes>
-    
+          <Route path="/oneMovie/:id" element={<OneMovie />}></Route>
+          <Route path="/addTOFav" element={<FavPage />}></Route>
+        </Routes>
+      </props.Provider>
     </div>
   );
 }
