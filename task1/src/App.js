@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { createContext , useState} from "react";
+import React, { createContext , useState,useEffect} from "react";
 
 import { Route, Routes } from "react-router-dom";
 import Home from "./component/Home";
@@ -11,6 +11,16 @@ import FavPage from "./component/FavPage";
 
 export const props = createContext();
 function App() {
+  const [first, setFirst] = useState([]);
+  const [arrayOfId, setArrayOfId] = useState([]);
+  useEffect(() => {
+    let storage = JSON.parse(localStorage.getItem("key")) || [];
+    let moviesId = JSON.parse(localStorage.getItem("arrayId")) || [];
+    console.log(storage, "[[[[[[[[");
+
+    setFirst(storage);
+    setArrayOfId(moviesId);
+  }, []);
   const [length, setLength] = useState(0);
   return (
     <div className="App">
@@ -18,6 +28,11 @@ function App() {
         value={{
           length,
           setLength,
+          setFirst,
+          setArrayOfId,
+          first,
+          arrayOfId
+
         }}
       >
         <NavBar />

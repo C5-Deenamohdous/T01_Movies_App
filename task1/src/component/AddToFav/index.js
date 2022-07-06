@@ -1,19 +1,10 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import "./style.css";
+import { props } from "../../App";
 
 function AddToFav({ el }) {
-  console.log(el, "oooooooooo");
-
-  const [first, setFirst] = useState([]);
-  const [arrayOfId, setArrayOfId] = useState([]);
-  useEffect(() => {
-    let storage = JSON.parse(localStorage.getItem("key")) || [];
-    let moviesId = JSON.parse(localStorage.getItem("arrayId")) || [];
-    console.log(storage, "[[[[[[[[");
-
-    setFirst(storage);
-    setArrayOfId(moviesId);
-  }, []);
+  const { length, setLength, setFirst, setArrayOfId, first, arrayOfId } =
+    useContext(props);
 
   const add = () => {
     console.log(el.id, "ppppppp");
@@ -29,12 +20,12 @@ function AddToFav({ el }) {
     let deleted = first.filter((element) => {
       return element.id !== el.id;
     });
-    localStorage.setItem("key",JSON.stringify (deleted));
+    localStorage.setItem("key", JSON.stringify(deleted));
     setFirst(deleted);
     let nextDelete = arrayOfId.filter((element) => {
       return el.id !== element;
     });
-    localStorage.setItem("arrayId",JSON.stringify (nextDelete));
+    localStorage.setItem("arrayId", JSON.stringify(nextDelete));
     setArrayOfId(nextDelete);
   };
   console.log(el, "ADDDDDDDDD");

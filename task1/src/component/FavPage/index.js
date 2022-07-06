@@ -2,17 +2,23 @@ import React, { useEffect, useState , useContext} from "react";
 import NavBar from "../NavBar";
 import { props } from "../../App";
 import "./style.css";
-
+import { RiDeleteBin2Line } from "react-icons/ri";
 function FavPage() {
 
-  const [first, setFirst] = useState([]);
-  const lengthOfArray = useContext(props)
-  console.log(lengthOfArray,"ppppppp[[[[[[");
-  useEffect(() => {
-    let storage = JSON.parse(localStorage.getItem("key")) || [];
-    setFirst(storage);
-    console.log(storage, "in favvvv pageee");
-  }, []);
+//   const [first, setFirst] = useState([]);
+//   const [arrayOfId, setArrayOfId] = useState([]);
+
+const { length, setLength, setFirst, setArrayOfId, first, arrayOfId } =
+useContext(props);
+//   console.log(lengthOfArray,"ppppppp[[[[[[");
+//   useEffect(() => {
+//     let storage = JSON.parse(localStorage.getItem("key")) || [];
+//     setFirst(storage);
+//     let moviesId = JSON.parse(localStorage.getItem("arrayId")) || [];
+//     console.log(storage, "in favvvv pageee");
+//     setArrayOfId(moviesId);
+
+//   }, []);
 
   const deleteFromFav = (el) => {
     let deleted = first.filter((element, i) => {
@@ -20,6 +26,11 @@ function FavPage() {
     });
     localStorage.setItem("key", JSON.stringify(deleted));
     setFirst(deleted);
+    let nextDelete = arrayOfId.filter((element) => {
+        return el.id !== element;
+      });
+    localStorage.setItem("arrayId",JSON.stringify (nextDelete));
+    setArrayOfId(nextDelete);
   };
 
   return (
@@ -44,15 +55,16 @@ function FavPage() {
                       deleteFromFav(el);
                     }}
                   >
-                    delete
+                    <RiDeleteBin2Line/>
                   </button>
                 </div>
               </div>
-              {lengthOfArray.setLength(first.length)}
-              {console.log(first.length, " {{{{{{{{{")};
+              {/* {lengthOfArray.setLength(first.length)} */}
+            
+            
             </>
             
-          );
+          )
         })}
     </div>
 
