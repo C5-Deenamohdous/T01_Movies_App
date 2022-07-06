@@ -14,28 +14,14 @@ function Home() {
       )
       .then((result) => {
         console.log(result);
-        setMovies(result.data.results);
+        setMovies([...movies,...result.data.results]);
       })
       .catch((err) => {
         console.log(err);
       });
   };
 
-  const nextPage = () => {
-    axios
-      .get(
-        `https://api.themoviedb.org/3/movie/popular?api_key=1bfa430aada4409bfa6a3c5528128e8a&language=en-US&page=${page}`
-      )
-      .then((result) => {
-        console.log(result);
-        setMovies(result.data.results);
-
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  };
-  
+ 
   useEffect(() => {
     getPopMovie();
   }, []);
@@ -80,7 +66,7 @@ function Home() {
 <div className="loadBtn">
   <button onClick={()=>{
 setPage(page+1)
-nextPage()
+getPopMovie()
 
 }}>Load More</button>
 </div>
