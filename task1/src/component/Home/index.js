@@ -23,7 +23,8 @@ function Home() {
     getPopMovie();
   }, []);
   return (
-
+    <>
+<h2 className="headOfHome">Popular Movies</h2>
 <div className="mainHome">
 
   {movies &&
@@ -56,7 +57,7 @@ function Home() {
   )
 }  
 </div>
-
+</>
 )
 
 }
