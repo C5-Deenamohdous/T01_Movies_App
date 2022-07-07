@@ -43,11 +43,13 @@ function Home() {
                }}> 
     <img class="locandina" src={`https://image.tmdb.org/t/p/w500/${el.poster_path}`} />
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8"  onClick={() => {
+                   navigate(`/oneMovie/${el.id}`);
+               }}>
       <div class="card-body">
         <h5 class="card-title">{el.title}</h5>
         <p class="card-text">{el.overview.substring(0,200)}...</p>
-        <p class="card-text"><small class="text-muted">{el.release_date}</small></p>
+        <p class="card-text date"><small class="text-muted"><b>{el.release_date}</b></small></p>
       </div>
     </div>
     

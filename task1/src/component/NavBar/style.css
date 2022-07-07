@@ -1,12 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Carter+One&family=Dancing+Script:wght@500&family=Merienda&family=The+Nautigal&display=swap');
+
 .navBarButton{
    display: flex;
    gap: 20px;
+   justify-content: end;
+
 }
 
 .links{
     text-decoration: none;
+
     color: var(--bs-navbar-brand-color);
 }
 .NAVBAR{
     height: 10%;
+    width: 100%;
+    display: flex;
+    z-index: 3 !important;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconFav{
+    font-size: 23px;
+    margin-right: 10px;
+}
+.iconFav:hover{
+    color: rgb(110, 104, 104);
+    margin-left: 5px;
+}
+.home{
+    font-size: 20px;
+
+}
+.home:hover{
+    color: rgb(110, 104, 104);
+}
+.favSPAN{
+    background-color: rgb(243, 60, 60);
+    margin-right: 6px;
+}
+.navbar-brand a{
+    font-weight: 600 ;
+    font-size: 30px !important;
+
+    justify-content: center;
+}
+.header{
+    width: 50%;
+ 
+    /* font-family: 'The Nautigal', cursive; */
+    /* font-size: 26px !important; */
+
 }

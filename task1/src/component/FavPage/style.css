@@ -1,0 +1,131 @@
+/* .faveItem{
+    display: flex;
+    width: 80%;
+    height: 100%;
+    position: absolute;
+    top: 16%;
+}
+.favImgShow{
+    width: 80%;
+    height: 60%;
+} */
+
+.FullMainCont {
+    /* top: 10%; */
+    width: 100%;
+    /* margin-top: 10%; */
+    height: 85%;
+    display: flex;
+    /* padding-top: 10%; */
+    position: absolute;
+    top: 15%;
+  }
+  
+  /* (Nav 10%) , Full => top 15% , width 85*/
+  
+  .-Main {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4%;
+  }
+  
+  .imgCard {
+    width: 20%;
+    height: 60%;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  
+  .imgCard img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 20px;
+    transition: 0.4s;
+  }
+  .bg-fw img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    border-radius: 20px;
+  }
+  
+  .movie-card {
+    color: white;
+    /* padding: 20px; */
+    height: 60%;
+    width: 20%;
+    background: #444040;
+  
+    position: relative;
+    animation: fadeUpIn;
+    animation-duration: 5s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    border-radius: 20px;
+  }
+  
+  .movie-card:hover {
+    box-shadow: 0 0 40px rgb(111, 108, 124);
+    cursor: pointer;
+  }
+  
+  .movie-card:hover img {
+    opacity: 0.5;
+    transition: 0.4s;
+  }
+  
+  .movie-card:active {
+    transform: translateY(10px);
+  }
+  
+  .movie-details {
+    position: absolute;
+    bottom: 2.5em;
+    opacity: 0.5;
+    display: none;
+    transition: all 0.3s ease-in-out;
+    top: 5px;
+    right: 10px;
+  }
+  
+  /* .movie-details .Btns-FavComp span svg {
+    font-size: 25px;
+  } */
+  
+  /* .movie-details .Btns-FavComp .redBtn svg {
+    color: red;
+  } */
+  
+  .deleteIcon{
+    font-size: 28px;
+    color: rgb(243, 60, 60);
+    cursor: pointer;
+  }
+  .deleteIcon:hover{
+    transition: all 0.1s ease-in-out;
+    opacity: .5;
+    display: block;
+  }
+  .movie-card:hover .movie-details {
+    transition: all 0.2s ease-in-out;
+    opacity: .8;
+    display: block;
+  }
+  
+  @keyframes fadeUpIn {
+    0% {
+      background-position: 10px;
+      transform: translateY(10px);
+      opacity: 0;
+    }
+  
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  
+ 
+  

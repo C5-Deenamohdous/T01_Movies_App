@@ -11,20 +11,22 @@ function NavBar() {
     
     <nav  className="navbar navbar-dark bg-dark fixed-top NAVBAR">
       <div className="container-fluid">
-        <a className="navbar-brand">Movie App</a>
+
+        <a className="navbar-brand header">Dina's Movie</a>
+
         <div className="navBarButton">
         
             {" "}
-            <Link className="links" to={"/"}>
+            <Link className="links home" to={"/"}>
               Home
             </Link>
          
          
             {" "}
             <Link className="links" to={"/addTOFav"}>
-              <BsFillBookmarkHeartFill/>
+              <  BsFillBookmarkHeartFill className="iconFav"/>
             </Link>{" "}
-            <span class="badge text-bg-secondary favSPAN">
+            <span class="badge favSPAN">
             {first.length}
             </span>
          
