@@ -4,9 +4,14 @@
    display: flex;
    gap: 20px;
    justify-content: end;
+width: 50%;
+margin-bottom: 35px;
+}
+.container-fluid{
+    display: flex;
+    width: 100%;
 
 }
-
 .links{
     text-decoration: none;
 
@@ -42,14 +47,27 @@
 }
 .navbar-brand a{
     font-weight: 600 ;
-    font-size: 30px !important;
+    /* font-size: 30px !important; */
 
     justify-content: center;
 }
+.navbar-brand
+{
+    font-family: 'The Nautigal', cursive;
+   
+    
+}
 .header{
     width: 50%;
- 
-    /* font-family: 'The Nautigal', cursive; */
-    /* font-size: 26px !important; */
-
+/* margin-left: 10px; */
+    
+font-weight: 700;
+}
+.header h3{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+.searchBar{
+    display: flex;
+    justify-items: center;
 }

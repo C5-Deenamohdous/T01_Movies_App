@@ -1,9 +1,30 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "./style.css";
+import { AiOutlineSearch } from "react-icons/ai";
 
 function Home() {
+
+  const [search, setSearch] = useState(false);
+  const [searchText, setSearchText] = useState("");
+ 
+
+  const searchMovie = () => {
+    axios
+      .get(`https://api.themoviedb.org/3/search/movie?api_key=1bfa430aada4409bfa6a3c5528128e8a&query=${searchText}`)
+      .then((result) => {
+        console.log(result);
+        // setFirst(result.data.results)
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    searchMovie();
+  }, []);
+
   const navigate = useNavigate();
   const [page, setPage] = useState(1)
   const [movies, setMovies] = useState("");
@@ -27,6 +48,18 @@ function Home() {
   }, []);
   return (
     <>
+      {/* <input
+            className="search"
+            type="text"
+            placeholder="Search.."
+            name="search"
+            onChange={(e) => {
+              setSearchText(e.target.value);
+              setSearch(true);
+            }}/>
+            <p className="SEARCH-ICON">
+            <AiOutlineSearch />
+          </p> */}
 <h2 className="headOfHome">Popular Movies</h2>
 <div className="mainHome">
 
