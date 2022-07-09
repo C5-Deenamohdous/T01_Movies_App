@@ -14,7 +14,7 @@ function NavBar() {
   const { first, setFirst } = useContext(props);
 
   const SearchMovie = () => {
-
+    console.log("iiiiiii");
     axios
       .get(
         `https://api.themoviedb.org/3/search/movie?api_key=1bfa430aada4409bfa6a3c5528128e8a&query=${searchText}`
@@ -39,7 +39,7 @@ function NavBar() {
         </div>
 
         <div className="navBarButton">
-{/*     
+        <div className="SEARCH-Container">
         <input
         className="search"
         type="text"
@@ -52,7 +52,7 @@ function NavBar() {
       />
       <span className="SEARCH-ICON">
         <AiOutlineSearch />
-      </span> */}
+      </span>
       
       {search && searchText !== "" ? (
             <div className="resultInSearch">
@@ -84,13 +84,17 @@ function NavBar() {
                       ) : (
                         ""
                       )}
+                     
                     </>
+                      
                   );
                 })}
             </div>
+            
           ) : (
             ""
           )}
+             </div>
         {" "}
           <Link className="links home" to={"/"}>
             Home

@@ -6,28 +6,8 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { props } from "../../App";
 
 function Home() {
-  const [search, setSearch] = useState(false);
-  const [searchText, setSearchText] = useState("");
-    const { first, setFirst } = useContext(props);
+ 
 
-  // const SearchMovie = () => {
-
-  //   axios
-  //     .get(
-  //       `https://api.themoviedb.org/3/search/movie?api_key=1bfa430aada4409bfa6a3c5528128e8a&query=${searchText}`
-  //     )
-  //     .then((result) => {
-  //       console.log(result,"iiiiiii");
-  //       // setFirst(result.data.results);
-  //     })
-  //     .catch((err) => {
-  //       console.log(err);
-  //     });
-  // };
-  // useEffect(() => {
-
-  //   SearchMovie();
-  // }, []);
   const navigate = useNavigate();
   const [page, setPage] = useState(1);
   const [movies, setMovies] = useState("");
@@ -51,56 +31,9 @@ function Home() {
   return (
     <>
       <h2 className="headOfHome">Popular Movies</h2>
-{/* 
-      <input
-        className="search"
-        type="text"
-        placeholder="Search.."
-        name="search"
-        onChange={(e) => {
-          setSearchText(e.target.value);
-          setSearch(true);
-        }}
-      />
-      <span className="SEARCH-ICON">
-        <AiOutlineSearch />
-      </span> */}
+
       <div className="mainHome">
-{/*      
-           {search && searchText !== "" ? (
-            <div className="resultInSearch">
-              {first.length &&
-                first.map((element) => {
-                  return (
-                    <>
-                      {element.title !== null &&
-                      element.title
-                        .toLowerCase()
-                        .includes(searchText.toLowerCase()) ? (
-                        <div
-                          className="title_photo_search"
-                          onClick={() => {
-                            navigate(`/oneMovie/${element.id}`);
-                          searchText("");
-                          }}
-                        >
-                          <div className="image-search">
-                            <img src={`https://image.tmdb.org/t/p/w500/${element.poster_path}`} />
-                          </div>
-                          <div className="Title-search">
-                            <p>{element.title}</p>
-                          </div>
-                        </div>
-                      ) : (
-                        ""
-                      )}
-                    </>
-                  );
-                })}
-            </div>
-          ) : (
-            ""
-          )} */}
+
         {movies &&
           movies.map((el, i) => {
             return (
