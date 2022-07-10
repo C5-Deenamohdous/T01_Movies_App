@@ -40,7 +40,7 @@ function NavBar() {
 
         <div className="navBarButton">
         <div className="SEARCH-Container">
-        <input
+        {/* <input
         className="search"
         type="text"
         placeholder="Search.."
@@ -52,7 +52,7 @@ function NavBar() {
       />
       <span className="SEARCH-ICON">
         <AiOutlineSearch />
-      </span>
+      </span> */}
       
       {search && searchText !== "" ? (
             <div className="resultInSearch">
