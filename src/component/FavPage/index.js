@@ -36,14 +36,15 @@ useContext(props);
                 class="movie-card bg-fw"
                 onClick={() => {
                                   navigate(`/oneMovie/${el.id}`);
-                             }}>    
+                             }}
+                             >    
                 <img
                   src={`https://image.tmdb.org/t/p/w500${el.poster_path}`}
                   class="card-img-top"
                   alt="..."
-                  onClick={() => {
-                    navigate(`/movie/${el.id}`);
-                  }}
+                  // onClick={() => {
+                  //   navigate(`/movie/${el.id}`);
+                  // }}
                 />
  <span
                      onClick={() => {

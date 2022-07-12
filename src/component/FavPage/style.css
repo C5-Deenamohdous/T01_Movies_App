@@ -1,27 +1,16 @@
-/* .faveItem{
-    display: flex;
-    width: 80%;
-    height: 100%;
-    position: absolute;
-    top: 16%;
-}
-.favImgShow{
-    width: 80%;
-    height: 60%;
-} */
+
 
 .FullMainCont {
-    /* top: 10%; */
+  
     width: 100%;
-    /* margin-top: 10%; */
+  
     height: 85%;
     display: flex;
-    /* padding-top: 10%; */
+ 
     position: absolute;
     top: 15%;
   }
   
-  /* (Nav 10%) , Full => top 15% , width 85*/
   
   .-Main {
     display: flex;
@@ -90,13 +79,7 @@
     right: 10px;
   }
   
-  /* .movie-details .Btns-FavComp span svg {
-    font-size: 25px;
-  } */
-  
-  /* .movie-details .Btns-FavComp .redBtn svg {
-    color: red;
-  } */
+
   
   .deleteIcon{
     font-size: 28px;
@@ -105,12 +88,12 @@
   }
   .deleteIcon:hover{
     transition: all 0.1s ease-in-out;
-    opacity: .5;
+    opacity: .6;
     display: block;
   }
   .movie-card:hover .movie-details {
     transition: all 0.2s ease-in-out;
-    opacity: .8;
+    opacity: .7;
     display: block;
   }
   

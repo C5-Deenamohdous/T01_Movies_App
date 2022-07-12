@@ -85,6 +85,7 @@ font-weight: 700;
     color: var(--BlackColor);
     outline-style: none;
     padding-left: 15px;
+    height: 30px;
   }
   
   .resultInSearch {
@@ -150,7 +151,7 @@ font-weight: 700;
   }
   .SEARCH-Container .SEARCH-ICON {
     position: absolute;
-    top: 30%;
+    top: 10%;
     right: 5%;
   }
   
